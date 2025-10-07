@@ -6,6 +6,7 @@ import FlexBox from './src/components/flex-box';
 import ImageComponent from './src/components/ImageComponent';
 import { Alert, ImageBackground, StyleSheet, View } from 'react-native';
 import TouchableComp from './src/components/TouchableComp';
+import PressableComp from './src/components/PressableComp';
 
 const App = () => {
   return (
@@ -46,6 +47,12 @@ const App = () => {
                   Alert.alert('Touch me');
                 }}
                 backgroundColor="orange"
+              />
+              <PressableComp
+                text="Press Me"
+                onPress={() => {
+                  Alert.alert("😂 Don't press me");
+                }}
               />
             </View>
           </View>
