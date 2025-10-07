@@ -12,6 +12,9 @@ const FlexBox = () => {
       <View style={styles.box2}>
         <Text style={styles.view}>View</Text>
       </View>
+      <View style={styles.box1}>
+        <Text style={styles.view}>View</Text>
+      </View>
     </View>
   );
 };
