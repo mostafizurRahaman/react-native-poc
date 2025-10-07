@@ -4,7 +4,8 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import FlexBox from './src/components/flex-box';
 import ImageComponent from './src/components/ImageComponent';
-import { ImageBackground, StyleSheet, View } from 'react-native';
+import { Alert, ImageBackground, StyleSheet, View } from 'react-native';
+import TouchableComp from './src/components/TouchableComp';
 
 const App = () => {
   return (
@@ -21,7 +22,32 @@ const App = () => {
           <View style={styles.overlay}>
             <ImageComponent />
             <FlexBox />
-            {/* <StyleSheet /> */}
+            <View>
+              <TouchableComp
+                isTouchableOpacity={true}
+                text={'Touch Me'}
+                onPress={() => {
+                  Alert.alert('Touch me');
+                }}
+                backgroundColor="orange"
+              />
+              <TouchableComp
+                isTouchableHeightlight={true}
+                text={'Touch Me'}
+                onPress={() => {
+                  Alert.alert('Touch me');
+                }}
+                backgroundColor="green"
+              />
+              <TouchableComp
+                withoutFeedBack={true}
+                text={'Touch Me'}
+                onPress={() => {
+                  Alert.alert('Touch me');
+                }}
+                backgroundColor="orange"
+              />
+            </View>
           </View>
         </ImageBackground>
       </SafeAreaView>
