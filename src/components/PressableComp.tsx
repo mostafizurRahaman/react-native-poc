@@ -33,9 +33,10 @@ const styles = StyleSheet.create({
   pressable: {
     backgroundColor: 'skyblue',
     paddingHorizontal: 20,
-    paddingVertical: 7,
+    paddingVertical: 10,
     borderRadius: 10,
     flex: 1,
+    minHeight: 40,
     justifyContent: 'center',
     alignItems: 'center',
     marginHorizontal: 'auto',
