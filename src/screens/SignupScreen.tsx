@@ -8,13 +8,14 @@ import {
 } from 'react-native';
 import PressableComp from '../components/PressableComp';
 
-const SignupScreen = () => {
+const SignupScreen = ({ route, navigation }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: '',
   });
+  console.log('Singup', { route });
   return (
     <ImageBackground
       source={{
@@ -105,6 +106,21 @@ const SignupScreen = () => {
         <View style={styles.navigationContainer}>
           <Text style={styles.text}>You don't have any account?</Text>
           <Text style={styles.loginText}>Login</Text>
+        </View>
+        <View style={styles.navigationContainer}>
+          <Text
+            onPress={() => {
+              navigation?.navigate('profile', {
+                user: {
+                  name: 'Mostafizur Rahaman',
+                  email: 'mostafizurrahaman0401@gmail.com',
+                },
+              });
+            }}
+            style={styles.text}
+          >
+            View Profile
+          </Text>
         </View>
       </View>
     </ImageBackground>

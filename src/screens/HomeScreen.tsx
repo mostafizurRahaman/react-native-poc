@@ -7,8 +7,10 @@ import ImageComponent from '../components/ImageComponent';
 import { Alert, ImageBackground, StyleSheet, View } from 'react-native';
 import TouchableComp from '../components/TouchableComp';
 import PressableComp from '../components/PressableComp';
+import { useNavigation } from '@react-navigation/native';
 
-const App = () => {
+const HomeScreen = () => {
+  const navigation = useNavigation<any>();
   return (
     <SafeAreaProvider>
       <SafeAreaView style={styles.container}>
@@ -51,7 +53,7 @@ const App = () => {
               <PressableComp
                 text="Press Me"
                 onPress={() => {
-                  Alert.alert("😂 Don't press me");
+                  navigation?.navigate('home');
                 }}
               />
             </View>
@@ -86,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;

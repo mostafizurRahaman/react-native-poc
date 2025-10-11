@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import PressableComp from '../components/PressableComp';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation, ...props }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -76,6 +76,23 @@ const LoginScreen = () => {
           }}
         />
       </View>
+      <View style={styles.signup}>
+        <Text style={styles.signupText}>You have no account ?</Text>
+        <Text
+          style={styles.signupLink}
+          onPress={() => {
+            navigation.navigate('signup', {
+              user: {
+                name: 'mostafizur',
+                email: 'Mostafizur',
+              },
+            });
+            console.log(props);
+          }}
+        >
+          Sign up
+        </Text>
+      </View>
     </ImageBackground>
   );
 };
@@ -111,5 +128,20 @@ const styles = StyleSheet.create({
   },
   inputContainer: {
     width: '100%',
+  },
+  signup: {
+    display: 'flex',
+    gap: 10,
+    alignItems: 'center',
+    flexDirection: 'row',
+  },
+  signupText: {
+    color: 'white',
+    fontSize: 16,
+  },
+  signupLink: {
+    color: 'red',
+    fontSize: 16,
+    fontWeight: 700,
   },
 });
